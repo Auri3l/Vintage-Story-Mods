@@ -39,12 +39,13 @@ namespace Egocarib.AutoMapMarkers.Patches
                 return;
 
             // Avoid expensive recalculations by monitoring position
-            if (blockSel.Position.Equals(LastPositionChecked))
+            if (blockSel?.Position == null || blockSel.Position.Equals(LastPositionChecked))
                 return;
             LastPositionChecked = blockSel.Position.Copy();
 
-            Vintagestory.API.Common.Block block = blockSel.Block;
             BlockPos blockPos = blockSel.Position;
+            Vintagestory.API.Common.Block block = blockSel.Block;
+            block ??= MapMarkerMod.CoreClientAPI.World.BlockAccessor.GetBlock(blockPos);
 
             if (block == null)
             {
