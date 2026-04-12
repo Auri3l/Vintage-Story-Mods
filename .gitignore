@@ -1,0 +1,24 @@
+# Build artifacts
+bin/
+obj/
+*.dll
+*.pdb
+*.deps.json
+*.exe
+*.msi
+*.zip
+*.7z
+
+# User-specific files
+.vs/
+*.user
+*.userosscache
+*.sln.docstates
+
+# IDE files
+.vscode/
+
+# Vintage Story specific
+# If you have local game files in the directory, ignore them
+# VintageStory.exe
+# Libs/
